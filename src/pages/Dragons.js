@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 function Dragons() {
   return (
     <div>Dragons</div>
-  )
+  );
 }
 
-export default Dragons
+export default Dragons;
