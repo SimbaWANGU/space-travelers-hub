@@ -16,7 +16,6 @@ function Rockets() {
   }, []);
 
   const rockets = useSelector((state) => state.rockets);
-
   return (
     <>
       {rockets.map((rocket) => (
