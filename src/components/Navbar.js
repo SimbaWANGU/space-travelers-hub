@@ -4,11 +4,14 @@ import Profile from '../pages/Profile';
 import Dragons from '../pages/Dragons';
 import Mission from '../pages/Mission';
 import Rockets from '../pages/Rockets';
+import Logo from '../assets/planet.png';
 
 function Navbar() {
   return (
     <>
       <div className="nav">
+        <img src={Logo} alt="logo" className="logo" />
+        <p className="logoTitle">Space Travelers Hub</p>
         <NavLink
           to="dragons"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
