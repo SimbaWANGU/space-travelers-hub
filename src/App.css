@@ -1,5 +1,4 @@
 .nav {
-  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid grey;
@@ -23,7 +22,6 @@
 .nav a {
   border-radius: 4px;
   padding: 6px 10px;
-  margin-right: 10px;
   text-decoration: none;
   margin: auto 0 auto 0;
   color: dodgerblue;
