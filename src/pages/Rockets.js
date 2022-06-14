@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import fetchRockets from '../api/rocketApiCall';
 import RocketContainer from '../components/RocketContainer';
 import { getRockets } from '../redux/rockets/rockets';
@@ -15,11 +15,18 @@ function Rockets() {
     data();
   }, []);
 
+  const rockets = useSelector((state) => state.rockets);
+
   return (
     <>
-      <RocketContainer />
-      <RocketContainer />
-      <RocketContainer />
+      {rockets.map((rocket) => (
+        <RocketContainer
+          key={rocket.id}
+          name={rocket.rocket_name}
+          description={rocket.description}
+          image={rocket.flickr_image}
+        />
+      ))}
     </>
   );
 }

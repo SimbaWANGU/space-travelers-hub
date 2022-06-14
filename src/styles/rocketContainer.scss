@@ -8,12 +8,21 @@ $buttonHoveredColor : rgba(0, 0, 255, 0.9);
 }
 
 .imageContainer {
-  height: 100%;
-  width: 50%;
+  display: flex;
+  height: 18vh;
+  width: 15vw;
+  margin-right: 50px;
+  padding: 0;
+}
+
+.image {
+  height: inherit;
+  width: inherit;
 }
 
 .rocketName {
   font-weight: 500;
+  color: black;
   margin-top: 0;
 }
 
@@ -22,6 +31,8 @@ $buttonHoveredColor : rgba(0, 0, 255, 0.9);
 }
 
 .rocketDetails {
+  margin-left: 30px;
+
   button {
     padding: 1%;
     background-color: $buttonColor;
