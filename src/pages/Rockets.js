@@ -1,8 +1,13 @@
 import React from 'react';
+import RocketContainer from '../components/RocketContainer';
 
 function Rockets() {
   return (
-    <div>Rockets</div>
+    <>
+      <RocketContainer />
+      <RocketContainer />
+      <RocketContainer />
+    </>
   );
 }
 
