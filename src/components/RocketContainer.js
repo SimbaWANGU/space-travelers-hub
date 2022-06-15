@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import { reserveRocket } from '../redux/rockets/rockets';
+import { cancelReservation, reserveRocket } from '../redux/rockets/rockets';
 import '../styles/rocketContainer.scss';
 
 function RocketContainer({
@@ -35,11 +35,11 @@ function RocketContainer({
     setReserved(!reserved);
   };
 
-  const cancelReservationHandler = () => {
-
+  const cancelReservationHandler = (id) => {
+    dispatch(cancelReservation(id));
   };
 
-  const ReservedBadge = () => <b>Reserved</b>;
+  const ReservedBadge = () => <b className="badgeIcon">Reserved</b>;
 
   return (
     <div className="rocketContainer">
@@ -51,11 +51,12 @@ function RocketContainer({
         <h3 className="rocketName">{name}</h3>
         <p className="rocketDescription">
           {reserved
-            ? `${<ReservedBadge />} ${description}`
+            // eslint-disable-next-line react/jsx-key
+            ? [<ReservedBadge />, ' ', description]
             : description}
         </p>
         {reserved
-          ? <button type="button" className="cancelReservationButton" onClick={() => cancelReservationHandler()}>Cancel Reservation</button>
+          ? <button type="button" className="cancelReservationButton" onClick={() => cancelReservationHandler(id)}>Cancel Reservation</button>
           : <button type="button" className="reserveRocketocketButton" onClick={() => reserveRocketHandler(id, name)}>Reserve Rocket</button>}
       </div>
     </div>
