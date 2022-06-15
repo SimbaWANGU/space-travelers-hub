@@ -17,7 +17,7 @@ const dragonsReducer = (state = [], action) => {
     case GET_DRAGONS:
       return action.dragons;
     case RESERVE_DRAGON:
-      return [...state].map((dragon) => {
+      return state.map((dragon) => {
         if (dragon.id !== action.id) { return dragon; }
         return { ...dragon, reserved: true };
       });

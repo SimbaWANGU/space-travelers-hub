@@ -6,7 +6,6 @@ import fetchDragons from '../api/dragonAPI';
 
 export default function Dragonsdisplay() {
   const dragons = useSelector((state) => state.dragons);
-  console.log(dragons[0]);
   const dispatch = useDispatch();
   useEffect(() => {
     async function data() {
@@ -17,7 +16,6 @@ export default function Dragonsdisplay() {
   }, []);
   const handleReserve = (id) => {
     dispatch(reverseDragonAction(id));
-    console.log(id);
   };
   return (
     <div>
