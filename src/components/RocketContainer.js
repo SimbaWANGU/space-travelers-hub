@@ -35,8 +35,10 @@ function RocketContainer({
     setReserved(!reserved);
   };
 
-  const cancelReservationHandler = (id) => {
+  const cancelReservationHandler = (id, name) => {
     dispatch(cancelReservation(id));
+    toastDisplay(`${name} reservation has been Cancelled`);
+    setReserved(!reserved);
   };
 
   const ReservedBadge = () => <b className="badgeIcon">Reserved</b>;
@@ -56,7 +58,7 @@ function RocketContainer({
             : description}
         </p>
         {reserved
-          ? <button type="button" className="cancelReservationButton" onClick={() => cancelReservationHandler(id)}>Cancel Reservation</button>
+          ? <button type="button" className="cancelReservationButton" onClick={() => cancelReservationHandler(id, name)}>Cancel Reservation</button>
           : <button type="button" className="reserveRocketocketButton" onClick={() => reserveRocketHandler(id, name)}>Reserve Rocket</button>}
       </div>
     </div>
