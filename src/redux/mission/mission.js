@@ -8,16 +8,14 @@ const AddMission = (mission) => ({
   payload: mission,
 });
 
-export const fetchMission = () => dispatch => axios.get('https://api.spacexdata.com/v3/missions')
-.then((response) => {
-  console.log(response.data)
-  return dispatch(AddMission(response.data))
-})
-   .catch( (err) => dispatch({ type: MISSION_FAILURE, err }))
-
+export const fetchMission = () => (dispatch) => axios.get('https://api.spacexdata.com/v3/missions')
+  .then((response) => {
+    console.log(response.data);
+    return dispatch(AddMission(response.data));
+  })
+  .catch((err) => dispatch({ type: MISSION_FAILURE, err }));
 
 const InitialState = { missions: [] };
-
 
 const MissionReducer = (state = InitialState, action) => {
   switch (action.type) {
