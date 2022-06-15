@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { cancelReservation, reserveRocket } from '../redux/rockets/rockets';
@@ -10,6 +10,7 @@ function RocketContainer({
   name,
   description,
   image,
+  reserved,
 }) {
   const dispatch = useDispatch();
 
@@ -27,18 +28,14 @@ function RocketContainer({
     });
   };
 
-  const [reserved, setReserved] = useState(false);
-
   const reserveRocketHandler = (id, name) => {
     dispatch(reserveRocket(id));
     toastDisplay(`${name} has been Reserved`);
-    setReserved(!reserved);
   };
 
   const cancelReservationHandler = (id, name) => {
     dispatch(cancelReservation(id));
     toastDisplay(`${name} reservation has been Cancelled`);
-    setReserved(!reserved);
   };
 
   const ReservedBadge = () => <b className="badgeIcon">Reserved</b>;
