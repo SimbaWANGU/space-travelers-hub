@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { dragonAction, reverseDragonAction } from '../redux/dragons/dragon';
+import { cancelReservation, dragonAction, reverseDragonAction } from '../redux/dragons/dragon';
 import DragonContainer from '../components/DragonsContainer';
 import fetchDragons from '../api/dragonAPI';
 
@@ -17,6 +17,10 @@ export default function Dragonsdisplay() {
   const handleReserve = (id) => {
     dispatch(reverseDragonAction(id));
   };
+
+  const handleCancel = (id) => {
+    dispatch(cancelReservation(id));
+  };
   return (
     <div>
       <div className="dragons-container">
@@ -29,6 +33,7 @@ export default function Dragonsdisplay() {
             image={dragon.flickr_image}
             key={dragon.id}
             handleReserve={() => handleReserve(dragon.id)}
+            handleCancel={() => handleCancel(dragon.id)}
           />
         ))}
       </div>
