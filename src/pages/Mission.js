@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 import '../styles/mission.css';
+import '../styles/missionUI.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMission } from '../redux/mission/mission';
 
@@ -30,7 +31,7 @@ export default function Missions() {
               <td>{mission.description}</td>
               <td>
                 <div>
-                  <h6>not a member</h6>
+                  <button type="button">not a member</button>
                 </div>
               </td>
               <td>
