@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 
 import '../styles/mission.css';
 import { useSelector, useDispatch } from 'react-redux';
-import fetchMission from '../redux/mission/mission';
+import {fetchMission} from '../redux/mission/mission';
 
 export default function Missions() {
-  const missionsApi = useSelector((state) => state.MissionReducer.missions);
+  const missionsApi = useSelector((state) => state.missions.missions);
   const dispatch = useDispatch();
 
   useEffect(() => {

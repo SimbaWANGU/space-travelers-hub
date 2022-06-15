@@ -8,16 +8,18 @@ const AddMission = (mission) => ({
   payload: mission,
 });
 
-const fetchMission = () => async (dispatch) => {
-  await axios.get('https://api.spacexdata.com/v3/missions').then(
-    (response) => dispatch(AddMission(response.data)),
-    (err) => dispatch({ type: MISSION_FAILURE, err }),
-  );
-};
+export const fetchMission = () => dispatch => axios.get('https://api.spacexdata.com/v3/missions')
+.then((response) => {
+  console.log(response.data)
+  return dispatch(AddMission(response.data))
+})
+   .catch( (err) => dispatch({ type: MISSION_FAILURE, err }))
+
 
 const InitialState = { missions: [] };
 
-export const MissionReducer = (state = InitialState, action) => {
+
+const MissionReducer = (state = InitialState, action) => {
   switch (action.type) {
     case MISSION_ADDED:
       return { ...state, missions: action.payload };
@@ -26,4 +28,4 @@ export const MissionReducer = (state = InitialState, action) => {
   }
 };
 
-export default fetchMission;
+export default MissionReducer;
