@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { reserveRocket } from '../redux/rockets/rockets';
@@ -12,6 +12,7 @@ function RocketContainer({
   image,
 }) {
   const dispatch = useDispatch();
+
   const toastDisplay = (message) => {
     toast.success(message, {
       style: {
@@ -25,10 +26,21 @@ function RocketContainer({
       },
     });
   };
-  const handleClick = (id, name) => {
+
+  const [reserved, setReserved] = useState(false);
+
+  const reserveRocketHandler = (id, name) => {
     dispatch(reserveRocket(id));
     toastDisplay(`${name} has been Reserved`);
+    setReserved(!reserved);
   };
+
+  const cancelReservationHandler = () => {
+
+  };
+
+  const ReservedBadge = () => <b>Reserved</b>;
+
   return (
     <div className="rocketContainer">
       <Toaster />
@@ -37,8 +49,14 @@ function RocketContainer({
       </div>
       <div className="rocketDetails">
         <h3 className="rocketName">{name}</h3>
-        <p className="rocketDescription">{description}</p>
-        <button type="button" className="rocketButton" onClick={() => handleClick(id, name)}>Reserve Rocket</button>
+        <p className="rocketDescription">
+          {reserved
+            ? `${<ReservedBadge />} ${description}`
+            : description}
+        </p>
+        {reserved
+          ? <button type="button" className="cancelReservationButton" onClick={() => cancelReservationHandler()}>Cancel Reservation</button>
+          : <button type="button" className="reserveRocketocketButton" onClick={() => reserveRocketHandler(id, name)}>Reserve Rocket</button>}
       </div>
     </div>
   );

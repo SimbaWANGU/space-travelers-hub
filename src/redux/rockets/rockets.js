@@ -30,7 +30,6 @@ export default function rocketsReducer(state = [], action) {
         }
         return { ...rocket, reserved: true };
       });
-      console.log(newState);
       return newState;
     }
     default: {

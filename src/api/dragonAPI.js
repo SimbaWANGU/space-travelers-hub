@@ -3,7 +3,6 @@ const DRAGON_BASE_URL = 'https://api.spacexdata.com/v3/dragons';
 const fetchDragons = async () => {
   const res = await fetch(DRAGON_BASE_URL);
   const data = await res.json();
-  console.log(data);
   const dragons = [];
   data.forEach((dragon) => dragons.push(
     {
