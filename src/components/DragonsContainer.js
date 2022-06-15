@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function DragonContainer({
-  id, name, type, image, description,
+  id, name, type, image, description, handleReserve, handleCancel,
 }) {
   return (
     <>
@@ -18,7 +18,9 @@ function DragonContainer({
             {type}
           </p>
           <p>{description}</p>
-          <button type="button" className="rocketButton">Reserve Dragon</button>
+          <button type="button" className="rocketButton" onClick={handleReserve}>Reserve Dragon</button>
+          { ' ' }
+          <button type="button" className="cancel-reserve" onClick={handleCancel}>Cancel Reservation</button>
         </div>
       </div>
     </>
@@ -31,6 +33,8 @@ DragonContainer.propTypes = {
   type: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  handleReserve: PropTypes.func.isRequired,
+  handleCancel: PropTypes.func.isRequired,
 };
 
 export default DragonContainer;
