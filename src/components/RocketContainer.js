@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 import { cancelReservation, reserveRocket } from '../redux/rockets/rockets';
@@ -50,8 +50,7 @@ function RocketContainer({
         <h3 className="rocketName">{name}</h3>
         <p className="rocketDescription">
           {reserved
-            // eslint-disable-next-line react/jsx-key
-            ? [<ReservedBadge />, ' ', description]
+            ? [<ReservedBadge key={1} />, ' ', description]
             : description}
         </p>
         {reserved
@@ -61,5 +60,13 @@ function RocketContainer({
     </div>
   );
 }
+
+RocketContainer.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
+  image: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+};
 
 export default RocketContainer;
