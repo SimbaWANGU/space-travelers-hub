@@ -36,10 +36,6 @@ function DragonContainer({
   );
 }
 
-// DragonContainer.defaultPropTypes = {
-//   reserved: undefined,
-// };
-
 DragonContainer.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
