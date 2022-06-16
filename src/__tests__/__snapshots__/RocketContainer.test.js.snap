@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rocket page tests Page renders as expected 1`] = `
+<div
+  className="rocketContainer"
+  data-testid="rocketContainer"
+>
+  <div
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "bottom": 16,
+        "left": 16,
+        "pointerEvents": "none",
+        "position": "fixed",
+        "right": 16,
+        "top": 16,
+        "zIndex": 9999,
+      }
+    }
+  />
+  <div
+    className="imageContainer"
+  >
+    <img
+      alt="rocket"
+      className="image"
+      src="https://img.example.com"
+    />
+  </div>
+  <div
+    className="rocketDetails"
+  >
+    <h3
+      className="rocketName"
+    >
+      Rocket
+    </h3>
+    <p
+      className="rocketDescription"
+    >
+      Lorem ipsum dolor sit amet
+    </p>
+    <button
+      className="reserveRocketocketButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Rocket
+    </button>
+  </div>
+</div>
+`;

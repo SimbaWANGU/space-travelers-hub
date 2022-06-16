@@ -5,6 +5,7 @@
 
 .my-profile section {
   flex-basis: 47%;
+  margin: 10px;
 }
 
 .my-profile h2 {

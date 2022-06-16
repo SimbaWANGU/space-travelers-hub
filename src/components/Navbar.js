@@ -25,7 +25,7 @@ function Navbar() {
           Missions
         </NavLink>
         <NavLink
-          to="rockets"
+          to="/"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           Rockets
@@ -38,9 +38,9 @@ function Navbar() {
         </NavLink>
       </div>
       <Routes>
-        <Route path="dragons" element={<Dragons />} />
+        <Route path="/dragons" element={<Dragons />} />
         <Route path="/missions" element={<Mission />} />
-        <Route path="rockets" element={<Rockets />} />
+        <Route path="/" element={<Rockets />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
