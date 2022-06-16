@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Toaster } from 'react-hot-toast';
 
 function DragonContainer({
-  id, name, type, image, description, handleReserve, handleCancel,
+  id, name, type, image, description, handleReserve, handleCancel, reserved,
 }) {
   return (
     <>
       <div className="rocketContainer">
+        <Toaster />
         <div className="imageContainer">
           <img src={image} alt={id} className="image" />
         </div>
@@ -17,10 +19,19 @@ function DragonContainer({
             {' '}
             {type}
           </p>
-          <p>{description}</p>
-          <button type="button" className="rocketButton" onClick={handleReserve}>Reserve Dragon</button>
-          { ' ' }
-          <button type="button" className="cancel-reserve" onClick={handleCancel}>Cancel Reservation</button>
+          <p>
+            {reserved === true && (
+            <b className="badgeIcon">Reserved</b>
+            )}
+            {description}
+          </p>
+          {!reserved === true && (
+            <button type="button" className="reserveRocketocketButton" onClick={handleReserve}>Reserve Dragon</button>
+          )}
+
+          {reserved === true && (
+            <button type="button" className="cancelReservationButton" onClick={handleCancel}>Cancel Reservation</button>
+          )}
         </div>
       </div>
     </>
@@ -35,6 +46,7 @@ DragonContainer.propTypes = {
   description: PropTypes.string.isRequired,
   handleReserve: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default DragonContainer;
