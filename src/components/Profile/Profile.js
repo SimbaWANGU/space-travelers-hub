@@ -4,6 +4,13 @@ import './Profile.css';
 
 const Profile = () => {
   const allMissions = useSelector((state) => state.missions);
+  const dragons = useSelector((state) => state.dragons);
+  const bookedDragons = dragons.filter((dragons) => {
+    if (dragons.reserved === true) {
+      return dragons;
+    }
+    return null;
+  });
   const allrockets = useSelector((state) => state.rockets);
 
   const missionsJoined = allMissions.filter((mission) => {
@@ -49,6 +56,15 @@ const Profile = () => {
         </section>
         <section>
           <h2>My Dragons</h2>
+          <ul>
+            {
+              bookedDragons.map((dragon) => (
+                <li key={dragon.id}>
+                  {dragon.name}
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </div>
     </div>
