@@ -6,7 +6,7 @@ function Rockets() {
   const rockets = useSelector((state) => state.rockets);
 
   return (
-    <>
+    <div data-testid="rocketsDisplay">
       {rockets.map((rocket) => (
         <RocketContainer
           key={rocket.id}
@@ -17,7 +17,7 @@ function Rockets() {
           reserved={rocket.reserved}
         />
       ))}
-    </>
+    </div>
   );
 }
 
