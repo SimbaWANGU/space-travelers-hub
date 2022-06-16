@@ -41,7 +41,7 @@ function RocketContainer({
   const ReservedBadge = () => <b className="badgeIcon">Reserved</b>;
 
   return (
-    <div className="rocketContainer">
+    <div className="rocketContainer" data-testid="rocketContainer">
       <Toaster />
       <div className="imageContainer">
         <img src={image} alt="rocket" className="image" />

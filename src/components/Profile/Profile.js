@@ -4,10 +4,18 @@ import './Profile.css';
 
 const Profile = () => {
   const allMissions = useSelector((state) => state.missions);
+  const allrockets = useSelector((state) => state.rockets);
 
   const missionsJoined = allMissions.filter((mission) => {
     if (mission.status === true) {
       return mission;
+    }
+    return null;
+  });
+
+  const rocketsReserved = allrockets.filter((rocket) => {
+    if (rocket.reserved === true) {
+      return rocket;
     }
     return null;
   });
@@ -18,10 +26,6 @@ const Profile = () => {
         <section>
           <h2>My Missions</h2>
           <ul>
-            {/* <li>Telstar</li>
-            <li>SES</li>
-            <li>AsiaSat</li>
-            <li>ABS</li> */}
             {
               missionsJoined.map((mission) => (
                 <li key={mission.mission_id}>
@@ -33,6 +37,18 @@ const Profile = () => {
         </section>
         <section>
           <h2>My Rockets</h2>
+          <ul>
+            {
+              rocketsReserved.map((rocket) => (
+                <li key={rocket.id}>
+                  {rocket.rocket_name}
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <section>
+          <h2>My Dragons</h2>
         </section>
       </div>
     </div>
