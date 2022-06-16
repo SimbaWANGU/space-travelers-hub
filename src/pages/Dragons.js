@@ -1,25 +1,34 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { cancelReservation, dragonAction, reverseDragonAction } from '../redux/dragons/dragon';
+import toast from 'react-hot-toast';
+import { cancelReservation, reverseDragonAction } from '../redux/dragons/dragon';
 import DragonContainer from '../components/DragonsContainer';
-import fetchDragons from '../api/dragonAPI';
 
 export default function Dragonsdisplay() {
   const dragons = useSelector((state) => state.dragons);
   const dispatch = useDispatch();
-  useEffect(() => {
-    async function data() {
-      const dragons = await fetchDragons();
-      dispatch(dragonAction(dragons));
-    }
-    data();
-  }, []);
-  const handleReserve = (id) => {
-    dispatch(reverseDragonAction(id));
+  const toastDisplay = (message) => {
+    toast.success(message, {
+      style: {
+        border: '1px solid blue',
+        padding: '16px',
+        color: 'blue',
+      },
+      iconTheme: {
+        primary: 'blue',
+        secondary: '#FFFAEE',
+      },
+    });
   };
 
-  const handleCancel = (id) => {
+  const handleReserve = (id, name) => {
+    dispatch(reverseDragonAction(id));
+    toastDisplay(`${name} has been reserved`);
+  };
+
+  const handleCancel = (id, name) => {
     dispatch(cancelReservation(id));
+    toastDisplay(`${name} reservation has been Cancelled`);
   };
   return (
     <div>
@@ -32,8 +41,10 @@ export default function Dragonsdisplay() {
             type={dragon.type}
             image={dragon.flickr_image}
             key={dragon.id}
-            handleReserve={() => handleReserve(dragon.id)}
-            handleCancel={() => handleCancel(dragon.id)}
+            handleReserve={() => handleReserve(dragon.id, dragon.name)}
+            handleCancel={() => handleCancel(dragon.id, dragon.name)}
+            reserved={dragon.reserved}
+            toastDisplay={toastDisplay}
           />
         ))}
       </div>
@@ -41,5 +52,3 @@ export default function Dragonsdisplay() {
 
   );
 }
-
-// export Dragons;

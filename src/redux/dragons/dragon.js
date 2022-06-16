@@ -23,16 +23,22 @@ const dragonsReducer = (state = [], action) => {
   switch (action.type) {
     case GET_DRAGONS:
       return action.dragons;
-    case RESERVE_DRAGON:
-      return state.map((dragon) => {
-        if (dragon.id !== action.id) { return dragon; }
+    case RESERVE_DRAGON: {
+      const newState = state.map((dragon) => {
+        if (dragon.id !== action.id) {
+          return dragon;
+        }
         return { ...dragon, reserved: true };
       });
-    case CANCEL_RESERVATION:
-      return state.map((dragon) => {
+      return newState;
+    }
+    case CANCEL_RESERVATION: {
+      const newState = state.map((dragon) => {
         if (dragon.id !== action.id) { return dragon; }
         return { ...dragon, reserved: false };
       });
+      return newState;
+    }
     default:
       return state;
   }

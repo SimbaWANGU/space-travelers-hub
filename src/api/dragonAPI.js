@@ -11,6 +11,7 @@ const fetchDragons = async () => {
       description: dragon.description,
       type: dragon.type,
       flickr_image: dragon.flickr_images[0],
+      reserved: false,
     },
   ));
   return dragons;
