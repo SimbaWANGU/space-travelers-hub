@@ -4,6 +4,13 @@ import './Profile.css';
 
 const Profile = () => {
   const allMissions = useSelector((state) => state.missions);
+  const dragons = useSelector((state) => state.dragons);
+  const bookedDragons = dragons.filter((dragons) => {
+    if (dragons.reserved === true) {
+      return dragons;
+    }
+    return null;
+  });
 
   const missionsJoined = allMissions.filter((mission) => {
     if (mission.status === true) {
@@ -18,10 +25,6 @@ const Profile = () => {
         <section>
           <h2>My Missions</h2>
           <ul>
-            {/* <li>Telstar</li>
-            <li>SES</li>
-            <li>AsiaSat</li>
-            <li>ABS</li> */}
             {
               missionsJoined.map((mission) => (
                 <li key={mission.mission_id}>
@@ -33,6 +36,18 @@ const Profile = () => {
         </section>
         <section>
           <h2>My Rockets</h2>
+        </section>
+        <section>
+          <h2>My Dragons</h2>
+          <ul>
+            {
+              bookedDragons.map((dragon) => (
+                <li key={dragon.id}>
+                  {dragon.name}
+                </li>
+              ))
+            }
+          </ul>
         </section>
       </div>
     </div>
