@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Toaster } from 'react-hot-toast';
 
 function DragonContainer({
   id, name, type, image, description, handleReserve, handleCancel, reserved,
@@ -7,6 +8,7 @@ function DragonContainer({
   return (
     <>
       <div className="rocketContainer">
+        <Toaster />
         <div className="imageContainer">
           <img src={image} alt={id} className="image" />
         </div>
