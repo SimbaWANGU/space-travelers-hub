@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
-import Profile from '../pages/Profile';
+import Profile from './Profile/Profile';
 import Dragons from '../pages/Dragons';
 import Mission from './Missions/Missions';
 import Rockets from '../pages/Rockets';
@@ -31,7 +31,7 @@ function Navbar() {
           Rockets
         </NavLink>
         <NavLink
-          to="profile"
+          to="/profile"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           Profile
@@ -41,7 +41,7 @@ function Navbar() {
         <Route path="dragons" element={<Dragons />} />
         <Route path="/missions" element={<Mission />} />
         <Route path="rockets" element={<Rockets />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
