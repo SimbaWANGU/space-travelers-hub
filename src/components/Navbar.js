@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
-import Profile from '../pages/Profile';
+import Profile from './Profile/Profile';
 import Dragons from '../pages/Dragons';
-import Mission from '../pages/Mission';
+import Mission from './Missions/Missions';
 import Rockets from '../pages/Rockets';
 import Logo from '../assets/planet.png';
 
@@ -19,7 +19,7 @@ function Navbar() {
           Dragons
         </NavLink>
         <NavLink
-          to="missions"
+          to="/missions"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           Missions
@@ -31,7 +31,7 @@ function Navbar() {
           Rockets
         </NavLink>
         <NavLink
-          to="profile"
+          to="/profile"
           className={({ isActive }) => (isActive ? 'active' : 'inactive')}
         >
           Profile
@@ -39,9 +39,9 @@ function Navbar() {
       </div>
       <Routes>
         <Route path="dragons" element={<Dragons />} />
-        <Route path="missions" element={<Mission />} />
+        <Route path="/missions" element={<Mission />} />
         <Route path="rockets" element={<Rockets />} />
-        <Route path="profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
