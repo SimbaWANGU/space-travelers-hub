@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { cancelReservation, dragonAction, reverseDragonAction } from '../redux/dragons/dragon';
@@ -34,6 +35,7 @@ export default function Dragonsdisplay() {
             key={dragon.id}
             handleReserve={() => handleReserve(dragon.id)}
             handleCancel={() => handleCancel(dragon.id)}
+            reserved={dragon.reserved}
           />
         ))}
       </div>

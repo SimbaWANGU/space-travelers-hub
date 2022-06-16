@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function DragonContainer({
-  id, name, type, image, description, handleReserve, handleCancel,
+  id, name, type, image, description, handleReserve, handleCancel, reserved,
 }) {
   return (
     <>
@@ -17,15 +17,28 @@ function DragonContainer({
             {' '}
             {type}
           </p>
-          <p>{description}</p>
-          <button type="button" className="rocketButton" onClick={handleReserve}>Reserve Dragon</button>
-          { ' ' }
-          <button type="button" className="cancel-reserve" onClick={handleCancel}>Cancel Reservation</button>
+          <p>
+            {reserved === true && (
+            <b className="badgeIcon">Reserved</b>
+            )}
+            {description}
+          </p>
+          {!reserved === true && (
+            <button type="button" className="reserveRocketocketButton" onClick={handleReserve}>Reserve Dragon</button>
+          )}
+
+          {reserved === true && (
+            <button type="button" className="cancelReservationButton" onClick={handleCancel}>Cancel Reservation</button>
+          )}
         </div>
       </div>
     </>
   );
 }
+
+// DragonContainer.defaultPropTypes = {
+//   reserved: undefined,
+// };
 
 DragonContainer.propTypes = {
   id: PropTypes.string.isRequired,
@@ -35,6 +48,7 @@ DragonContainer.propTypes = {
   description: PropTypes.string.isRequired,
   handleReserve: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default DragonContainer;
