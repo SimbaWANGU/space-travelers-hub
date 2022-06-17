@@ -1,0 +1,88 @@
+$buttonColor : rgba(0, 0, 255, 0.7);
+$buttonHoveredColor : rgba(0, 0, 255, 0.9);
+$badgeColor : rgba(100, 100, 255, 0.7);
+
+.rocketContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 1% 5% 1% 5%;
+}
+
+.imageContainer {
+  display: flex;
+  height: 18vh;
+  width: 15vw;
+  margin-right: 50px;
+  padding: 0;
+}
+
+.image {
+  height: inherit;
+  width: inherit;
+}
+
+.rocketName {
+  font-weight: 500;
+  color: black;
+  margin-top: 0;
+}
+
+.rocketDescription {
+  margin: 5px 0 5px 0;
+}
+
+.rocketDetails {
+  margin-left: 30px;
+
+  .reserveRocketocketButton {
+    padding: 1%;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 100;
+    font-size: 14px;
+  }
+
+  .reserveRocketocketButton:hover {
+    background-color: $buttonHoveredColor;
+    transform: scale(1.01);
+    transition: 0.4s ease-out;
+  }
+
+  .reserveRocketocketButton:active {
+    transform: scale(0.99);
+    transition: 0.4s ease-in;
+  }
+
+  .cancelReservationButton {
+    padding: 1%;
+    background-color: white;
+    border: 1px solid $buttonColor;
+    border-radius: 5px;
+    color: $buttonColor;
+    font-weight: 100;
+    font-size: 14px;
+  }
+
+  .cancelReservationButton:hover {
+    background-color: white;
+    transform: scale(1.01);
+    transition: 0.4s ease-out;
+  }
+
+  .cancelReservationButton:active {
+    transform: scale(0.99);
+    transition: 0.4s ease-in;
+  }
+}
+
+.badgeIcon {
+  background-color: $badgeColor;
+  color: white;
+  border-radius: 5px;
+  font-weight: 100;
+  padding: 3px;
+  font-size: 14px;
+  line-height: 20px;
+}

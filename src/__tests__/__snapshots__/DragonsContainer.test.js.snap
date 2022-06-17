@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches Dragon container 1`] = `
+<div
+  className="rocketContainer"
+>
+  <div
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+    style={
+      Object {
+        "bottom": 16,
+        "left": 16,
+        "pointerEvents": "none",
+        "position": "fixed",
+        "right": 16,
+        "top": 16,
+        "zIndex": 9999,
+      }
+    }
+  />
+  <div
+    className="imageContainer"
+  >
+    <img
+      alt="1"
+      className="image"
+      src="https://image.com"
+    />
+  </div>
+  <div
+    className="rocketDetails"
+  >
+    <h3
+      className="rocketName"
+    >
+      Dragon
+    </h3>
+    <p
+      className="rocketDescription"
+    >
+      type:
+       
+      type
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet.
+    </p>
+    <button
+      className="reserveRocketocketButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve Dragon
+    </button>
+  </div>
+</div>
+`;
