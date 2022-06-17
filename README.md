@@ -45,9 +45,9 @@ Not yet available
 
 👤 **Brian**
 
-- GitHub: [@](https://github.com/christianbiring1)
-- Twitter: [@](https://twitter.com/christianbirin4)
-- LinkedIn: [](https://linkedin.com/in/christian-biringanine/)
+- GitHub: [@Bria222](https://github.com/Bria222)
+- Twitter: [@briannyachae9](https://twitter.com/briannyachae)
+- LinkedIn: [brian-nyachae](https://linkedin.com/in/brian-nyachae/)
 
 ## 🤝 Contributing
 
