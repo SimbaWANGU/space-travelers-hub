@@ -39,15 +39,15 @@ Not yet available
 
 👤 **Simba WANGU**
 
-- GitHub: [@](https://github.com/SimbaWANGU)
-- Twitter: [@](https://twitter.com/)
-- LinkedIn: [](https://linkedin.com/in//)
+- GitHub: [@SimbaWANGU](https://github.com/SimbaWANGU)
+- Twitter: [@Simb_erella](https://twitter.com/Simb_erella)
+- LinkedIn: [Simba Wangulu](https://linkedin.com/in/simba-wangulu/)
 
 👤 **Brian**
 
-- GitHub: [@](https://github.com/christianbiring1)
-- Twitter: [@](https://twitter.com/christianbirin4)
-- LinkedIn: [](https://linkedin.com/in/christian-biringanine/)
+- Github: [@Bria22](https://github.com/Bria222)
+- Linkedin: [@briannyachae](https://www.linkedin.com/in/briannyachae/)
+- Twitter: [@briannyachae9](https://twitter.com/briannyachae9)
 
 ## 🤝 Contributing
 
