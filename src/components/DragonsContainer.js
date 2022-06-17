@@ -39,14 +39,25 @@ function DragonContainer({
 }
 
 DragonContainer.propTypes = {
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  handleReserve: PropTypes.func.isRequired,
-  handleCancel: PropTypes.func.isRequired,
-  reserved: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  type: PropTypes.string,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  handleReserve: PropTypes.func,
+  handleCancel: PropTypes.func,
+  reserved: PropTypes.bool,
+};
+
+DragonContainer.defaultProps = {
+  id: '1',
+  name: 'Dragon',
+  type: 'type',
+  image: 'https://image.com',
+  description: 'Lorem ipsum dolor sit amet.',
+  handleReserve: () => {},
+  handleCancel: () => {},
+  reserved: false,
 };
 
 export default DragonContainer;

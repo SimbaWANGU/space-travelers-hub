@@ -62,11 +62,19 @@ function RocketContainer({
 }
 
 RocketContainer.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  reserved: PropTypes.bool.isRequired,
-  image: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  reserved: PropTypes.bool,
+  image: PropTypes.string,
+  description: PropTypes.string,
 };
+
+RocketContainer.defaultProps = {
+  id: 1,
+  name: 'Rocket',
+  reserved: false,
+  image: 'https://image.com',
+  description: 'Lorem ipsum dolor sit amet.',
+}
 
 export default RocketContainer;
