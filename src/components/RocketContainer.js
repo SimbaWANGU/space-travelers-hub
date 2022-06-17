@@ -75,6 +75,6 @@ RocketContainer.defaultProps = {
   reserved: false,
   image: 'https://image.com',
   description: 'Lorem ipsum dolor sit amet.',
-}
+};
 
 export default RocketContainer;
